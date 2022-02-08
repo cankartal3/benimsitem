@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+  {% load static %}
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/apple-icon-180x180.png' %}">
+  <link href="{% static 'assets/favicon.ico' %}" rel="icon">
+
+  <title>{% block title %} Uğur Can KARTAL {% endblock %}</title>
+  <meta name="keywords" content="{% block keywords %} Ugur Can {% endblock %}">
+  <meta name="description" content="{% block description %} Kişisel site {% endblock %}">
+
+  <link href="{% static 'main.d8e0d294.css' %}" rel="stylesheet">
+  {% block head %} {% endblock %}
+</head>
+  {% include 'header.html' %}
+  {% block content %} {% endblock %}
+  {% include 'footer.html' %}
+  {% block footer %} {% endblock %}
+
+<body class="">
+
+</body>
+</html>

@@ -8,7 +8,11 @@ class Hakkımda(models.Model):
     )
     isim = models.CharField(max_length=30)
     soyisim = models.CharField(max_length=30)
+    etiket = models.CharField(max_length=300)
+    anahtarkelime=models.CharField(max_length=300)
     aciklama = models.CharField(max_length=300)
+
+    ozgecmis = models.TextField()
     image = models.ImageField(blank=True, upload_to='images/')
     status = models.CharField(max_length=10,choices=STATUS)
     slug = models.SlugField()

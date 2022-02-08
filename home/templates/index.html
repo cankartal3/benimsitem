@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Yeni Django sayfası!</title>
-</head>
-<body>
-<h1>Hoş geldin djangoya</h1>
-<h3>Uğur Can Kartal Bilgisayar mühendisi.</h3>
+{% extends "homebase.html" %}
 
-<p>
-    {{text| safe}}
-</p>
+{% block content %}
+    {% include "content.html" %}
+{% endblock %}
 
-<p ><a>Uğur Can KARTAL</a></p>
-<h1><font color=”#ffffff”>Sitem</font></h1>
-</body>
-</html>
