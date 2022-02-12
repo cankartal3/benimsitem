@@ -18,7 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from home import views
+
 urlpatterns = [
+    path('derin_ogrenme/', views.derin_ogrenme, name='derin_ogrenme'),
     path('bilgilerim/', include('bilgilerim.urls')),
     path('admin/', admin.site.urls),
     path('', include('home.urls')),

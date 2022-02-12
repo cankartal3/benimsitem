@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 # Create your models here.
@@ -17,7 +18,7 @@ class About(models.Model):
     keywords = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
 
-    personal_background = models.TextField()
+    personal_background = RichTextUploadingField()
     image = models.ImageField(blank=True, upload_to='images/')
     status = models.CharField(max_length=10,choices=STATUS)
     slug = models.SlugField()
