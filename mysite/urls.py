@@ -21,7 +21,8 @@ from django.urls import path, include
 from home import views
 
 urlpatterns = [
-    path('derin_ogrenme/', views.derin_ogrenme, name='derin_ogrenme'),
+    path('projects/', views.projects, name='projects'),
+    path('ref/', views.references, name= 'references'),
     path('bilgilerim/', include('bilgilerim.urls')),
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
