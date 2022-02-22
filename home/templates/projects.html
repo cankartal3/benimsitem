@@ -1,8 +1,8 @@
 {% extends "homebase.html" %}
 
-{% block title %} {{ setting.title }} {% endblock %}
-{% block keywords %} {{ setting.keywords }} {% endblock %}
-{% block description %} {{ setting.description }} {% endblock %}
+{% block title %} {{ project.projectname }} {% endblock %}
+{% block keywords %}  {% endblock %}
+{% block description %} {{ project.description }} {% endblock %}
 {% block head %}
  <link rel="icon" href='{{setting.icon.url}}' >
 {% endblock %}
@@ -22,7 +22,6 @@
               <div class="col-md-8">
                   {{ project.contentofproject | safe}}
                   <br><br><br><br><br><br><br><br>
-
               </div>
             </div>
           </div>
@@ -30,6 +29,39 @@
 
      </div>
    </div>
+     {% if images %}
+        <div class="card">
+          <div class="card-block">
+            <h2>Proje Hakkında Resimler</h2>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+              {%for img in images%}
+              <div class="{% if forloop.first %} item active {% else %} item {% endif %}" style="width: 700px; height: 700px;">
+                <img src="  {{img.image.url}} " class="img-responsive" alt="...">
+                <div class="carousel-caption">
+                  <h3 class="h5">11111111111111111111111</h3>
+                  <p>2017</p>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {% for im in images%}
+              <li data-target="#carousel-example-generic" data-slide-to="{{forloop.counter0}}" class=" {% if forloop.first %} active {% endif %}"></li>
+              {% endfor %}
+            </ol>
+
+          </div>
+          </div>
+        </div>
+     {% endif %}
  </div>
 
 {% endblock %}
