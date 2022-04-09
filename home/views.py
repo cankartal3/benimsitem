@@ -54,6 +54,7 @@ def references(request):
 
 
 def project_detail(request, id, slug):
+    setting = Setting.objects.get()
     project = Projects.objects.get(pk=id)
     images = ProjectImages.objects.filter(myimage_id=id)
     aboutme = About.objects.get()
@@ -61,5 +62,6 @@ def project_detail(request, id, slug):
         'project': project,
         'images': images,
         'aboutme': aboutme,
+        'setting': setting,
     }
     return render(request, 'projects.html', context)

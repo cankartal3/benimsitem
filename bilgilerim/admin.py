@@ -33,6 +33,7 @@ class EducationsAdmin(admin.ModelAdmin):
 admin.site.register(About,AboutAdmin)
 admin.site.register(Images,ImagesAdmin)
 admin.site.register(Projects,ProjectsAdmin)
+admin.site.register(ProjectImages)
 admin.site.register(Educations,EducationsAdmin)
 admin.site.register(languages)
 admin.site.register(allworks)

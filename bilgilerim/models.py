@@ -75,6 +75,7 @@ class Projects(models.Model):
 
 class ProjectImages(models.Model):
     myimage = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    images_name = models.CharField(max_length=300)
     image = models.ImageField(blank=True, upload_to='images/')
 
     def image_tag(self): # Burada resim olmayanlar için çözüm üretilmiştir.
@@ -84,6 +85,8 @@ class ProjectImages(models.Model):
             return mark_safe('<img src="{}" height="100"/>'.format("/uploads/images/resim-yok.png"))
     image_tag.short_description = 'Project Image'
 
+    def __str__(self):
+        return self.images_name
 class Educations(models.Model):
     educated = models.ForeignKey(About, on_delete=models.CASCADE)
     school = models.CharField(max_length=50, blank=True)
